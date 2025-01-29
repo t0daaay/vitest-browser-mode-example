@@ -1,30 +1,28 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
   <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+    <h1>Scroll Demo</h1>
+    <div class="scroll-content">
+      <p class="content-text">
+        最下部にトップへスクロールするボタンを配置しています。
+      </p>
+    </div>
+    <button @click="scrollToTop" data-testid="to-top-button">トップへ</button>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
+<script setup lang="ts">
+const scrollToTop = () => {
+  window.scrollTo({ top: 0 });
+};
+</script>
+
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.scroll-content {
+  height: 1500px;
+  background-color: #f0f0f0;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+
+.content-text {
+  padding: 16px;
 }
 </style>
