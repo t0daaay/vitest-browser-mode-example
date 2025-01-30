@@ -10,7 +10,7 @@ describe("App.vue", () => {
     const wrapper = mount(App);
 
     // 「トップへ」ボタンをクリック
-    await wrapper.find('[data-testid="to-top-button"]').trigger("click");
+    await wrapper.find('[data-test="to-top-button"]').trigger("click");
 
     // 呼び出しの引数を検証
     expect(window.scrollTo).toHaveBeenCalledWith({

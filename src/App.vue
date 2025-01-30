@@ -6,7 +6,7 @@
         最下部にトップへスクロールするボタンを配置しています。
       </p>
     </div>
-    <button @click="scrollToTop" data-testid="to-top-button">トップへ</button>
+    <button @click="scrollToTop" data-test="to-top-button">トップへ</button>
   </div>
 </template>
 

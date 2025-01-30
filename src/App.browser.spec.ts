@@ -9,7 +9,7 @@ test("「トップへ」ボタンをクリックすると最上部へスクロ�
   window.scrollTo(0, document.body.scrollHeight);
 
   // 「トップへ」ボタンをクリック
-  const topButton = screen.getByTestId("to-top-button");
+  const topButton = screen.getByRole("button", { name: "トップへ" });
   await topButton.click(topButton);
 
   // スクロール位置が最上部（0）になっていることを確認
