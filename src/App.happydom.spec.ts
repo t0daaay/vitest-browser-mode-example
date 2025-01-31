@@ -1,6 +1,5 @@
 import { describe, it, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/vue";
-import userEvent from "@testing-library/user-event";
 import App from "../src/App.vue";
 
 describe("App.vue", () => {
@@ -13,7 +12,7 @@ describe("App.vue", () => {
 
     // 「トップへ」ボタンをクリック
     const topButton = screen.getByRole("button", { name: "トップへ" });
-    await userEvent.click(topButton);
+    await topButton.click();
 
     // 呼び出しの引数を検証
     expect(window.scrollTo).toHaveBeenCalledWith({

@@ -11,7 +11,7 @@ describe("App.vue", () => {
 
     // 「トップへ」ボタンをクリック
     const topButton = screen.getByRole("button", { name: "トップへ" });
-    await topButton.click(topButton);
+    await topButton.click();
 
     // スクロール位置が最上部（0）になっていることを確認
     expect(window.scrollY).toBe(0);

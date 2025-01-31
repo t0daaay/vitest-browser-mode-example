@@ -10,9 +10,6 @@ dependencies:
     version: 3.5.13(typescript@5.6.3)
 
 devDependencies:
-  '@testing-library/user-event':
-    specifier: ^14.6.1
-    version: 14.6.1(@testing-library/dom@10.4.0)
   '@testing-library/vue':
     specifier: ^8.1.0
     version: 8.1.0(vue@3.5.13)
