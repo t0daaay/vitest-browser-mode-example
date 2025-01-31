@@ -1,17 +1,19 @@
-import { test, expect } from "vitest";
+import { describe, test, expect } from "vitest";
 import { render } from "vitest-browser-vue";
 import App from "./App.vue";
 
-test("「トップへ」ボタンをクリックすると最上部へスクロールされる", async () => {
-  const screen = render(App);
+describe("App.vue", () => {
+  test("「トップへ」ボタンをクリックすると最上部へスクロールされる", async () => {
+    const screen = render(App);
 
-  // 最初は画面の一番下までスクロール
-  window.scrollTo(0, document.body.scrollHeight);
+    // 最初は画面の一番下までスクロール
+    window.scrollTo(0, document.body.scrollHeight);
 
-  // 「トップへ」ボタンをクリック
-  const topButton = screen.getByRole("button", { name: "トップへ" });
-  await topButton.click(topButton);
+    // 「トップへ」ボタンをクリック
+    const topButton = screen.getByRole("button", { name: "トップへ" });
+    await topButton.click(topButton);
 
-  // スクロール位置が最上部（0）になっていることを確認
-  expect(window.scrollY).toBe(0);
+    // スクロール位置が最上部（0）になっていることを確認
+    expect(window.scrollY).toBe(0);
+  });
 });
